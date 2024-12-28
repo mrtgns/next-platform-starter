@@ -1,4 +1,7 @@
+// components/Footer.js
+
 import Image from 'next/image';
+
 export function Footer() {
     return (
         <footer className="bg-gray-800 text-gray-300 py-8">
@@ -8,14 +11,18 @@ export function Footer() {
                     <h1 className="text-2xl font-bold text-white">Online Otizm Danışma</h1>
                     <p className="text-sm mt-2">Online destek, rehberlik ve yönlendirme.</p>
                 </div>
-                <div className="relative w-[80px] h-[80px] flex justify-center items-center md:w-auto">
-                    <Image
-                        src="/Logo.png"
-                        alt="Online Otizm Danışma Logo"
-                        layout="fill"
-                        objectFit="contain"
-                        className="cursor-pointer"
-                    />
+
+                {/* Logo Ortalamak için Flex ve Margin Düzenlemeleri */}
+                <div className="w-full md:w-1/3 flex justify-center items-center mb-4 md:mb-0">
+                    <div className="relative w-[80px] h-[80px]">
+                        <Image
+                            src="/Logo.png"
+                            alt="Online Otizm Danışma Logo"
+                            layout="fill"
+                            objectFit="contain"
+                            className="cursor-pointer"
+                        />
+                    </div>
                 </div>
 
                 {/* İletişim Bilgileri */}
