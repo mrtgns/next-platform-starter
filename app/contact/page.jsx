@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Contact() {
   const contactDetails = [
     {
@@ -31,29 +33,26 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {contactDetails.map((detail, index) => (
-            <a
+            <div
               key={index}
-              href={detail.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:bg-gray-600 transition duration-200 block"
+              onClick={() => window.open(detail.link, "_blank")}
+              className="bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:bg-gray-600 transition duration-200 cursor-pointer"
             >
               <div className="text-5xl mb-4">{detail.icon}</div>
               <h2 className="text-2xl font-bold text-gray-100 mb-2">
                 {detail.title}
               </h2>
               <p className="text-gray-400">{detail.description}</p>
-            </a>
+            </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="/"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-200 inline-block"
-          >
-            Ana Sayfaya Dön
-          </a>
+          <Link href="/">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-200">
+              Ana Sayfaya Dön
+            </button>
+          </Link>
         </div>
       </div>
     </div>
