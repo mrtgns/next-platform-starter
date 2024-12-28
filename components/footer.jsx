@@ -8,7 +8,7 @@ export function Footer() {
                     <h1 className="text-2xl font-bold text-white">Online Otizm Danışma</h1>
                     <p className="text-sm mt-2">Online destek, rehberlik ve yönlendirme.</p>
                 </div>
-                <div className="relative w-[80px] h-[80px]">
+                <div className="relative w-[80px] h-[80px] flex justify-center items-center md:w-auto">
                     <Image
                         src="/Logo.png"
                         alt="Online Otizm Danışma Logo"
