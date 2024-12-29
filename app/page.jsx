@@ -1,19 +1,38 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function HomePage() {
     return (
         <main className="bg-gray-600 text-gray-400 min-h-screen py-10 px-4">
             <div className="container mx-auto max-w-4xl">
-                {/* Başlık */}
-                <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">Online Otizm Danışma</h1>
-                <p className="text-lg text-gray-400 text-center mb-10">
-                      Otizm Yolculuğunuzda Yanınızdayız. Online Otizm Danışma, ailelere rehberlik
-                    ederek otizm spektrumundaki çocuklara özel eğitim ve destek sağlar. Hizmetlerimiz arasında, otizmli
-                    çocuklar için uygun eğitim ve terapi programları, sosyal becerilerin geliştirilmesi, aile desteği ve
-                    eğitimi bulunmaktadır. Ayrıca, davranış yönetimi, iletişim becerilerinin desteklenmesi, erken
-                    müdahale programları ve kaynak/destek grupları hakkında bilgiler sunmaktayız. Otizmli çocukların
-                    eğitim hakları ve günlük yaşam becerilerini geliştirmek için de rehberlik ediyoruz.
-                </p>
+                {/* Başlık ve Görsel */}
+                <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
+                    {/* Resim */}
+                    <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
+                        <Image
+                            src="/home-pic.jpg"
+                            alt="Online Otizm Danışma"
+                            width={500}
+                            height={500}
+                            className="object-cover"
+                        />
+                    </div>
+                    {/* Yazı */}
+                    <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
+                        <h1 className="text-4xl font-bold text-gray-100">
+                            Online Otizm Danışma
+                        </h1>
+                        <p className="text-lg text-gray-400 mt-4">
+                            Otizm Yolculuğunuzda Yanınızdayız. Online Otizm Danışma, ailelere rehberlik
+                            ederek otizm spektrumundaki çocuklara özel eğitim ve destek sağlar. Hizmetlerimiz arasında, otizmli
+                            çocuklar için uygun eğitim ve terapi programları, sosyal becerilerin geliştirilmesi, aile desteği ve
+                            eğitimi bulunmaktadır. Ayrıca, davranış yönetimi, iletişim becerilerinin desteklenmesi, erken
+                            müdahale programları ve kaynak/destek grupları hakkında bilgiler sunmaktayız. Otizmli çocukların
+                            eğitim hakları ve günlük yaşam becerilerini geliştirmek için de rehberlik ediyoruz.
+                        </p>
+                    </div>
+                </div>
 
                 {/* Hizmetler */}
                 <section className="mb-10">
