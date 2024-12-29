@@ -36,7 +36,7 @@ export function Footer() {
                     <p className="text-sm">
                         E-posta:{' '}
                         <a href="mailto:onlineotizmdanism@gmail.com" className="hover:text-white">
-                            onlineotizmdanism@gmail.com
+                            onlineotizmdanisma@gmail.com
                         </a>
                     </p>
                     <p className="text-sm mt-2">&copy; {new Date().getFullYear()} Online Otizm Danışma</p>
