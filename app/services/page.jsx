@@ -16,12 +16,7 @@ export default function Services() {
         "Ailelerin çocuklarına en iyi şekilde destek verebilmeleri için rehberlik sağlıyoruz.",
       icon: "👨‍👩‍👧‍👦",
     },
-    {
-      title: "Grup Etkinlikleri",
-      description:
-        "Sosyal becerileri geliştirmek için grup etkinlikleri düzenliyoruz.",
-      icon: "🤝",
-    },
+   
     {
       title: "Online Eğitim ve Destek",
       description:
