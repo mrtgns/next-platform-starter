@@ -97,9 +97,9 @@ export default function HomePage() {
                                         "Erken tanı ve müdahale programları hakkında bilgi ve yönlendirme.",
                                 },
                                 {
-                                    title: "Kaynak ve Destek Grupları",
+                                    title: "Ulaşılabilir Kaynak Bulma",
                                     description:
-                                        "Aileler için yerel ve çevrimiçi destek grupları ve kaynak bilgileri.",
+                                        "Aileler çevrimiçi destek  ve kaynak bilgileri.",
                                 },
                                 {
                                     title: "Günlük Yaşam Becerileri",
