@@ -52,9 +52,14 @@ export default function HomePage() {
                         <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
                             <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
                             <p className="text-lg text-gray-400 mt-4">
-                                Otizm Yolculuğunuzda Yanınızdayız. Online Otizm Danışma, ailelere rehberlik ederek otizm
-                                spektrumundaki çocuklara özel eğitim ve destek sağlar. Eğitim, terapi programları,
-                                sosyal becerilerin geliştirilmesi, aile desteği ve daha fazlasını sunuyoruz.
+                                Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ederek özel
+                                eğitim ve destek sağlar. Otizm nedir, belirtileri nelerdir, tanı süreci nasıl işler,
+                                tedavi edilebilir mi gibi temel sorulara yanıt bulabilir, erken tanının önemini
+                                keşfedebilirsiniz. Ayrıca, evde yapılabilecek çalışmalar, rehabilitasyon seçimi ve
+                                otizmli çocukların eğitiminde kullanılan yöntemler hakkında detaylı bilgiler sunuyoruz.
+                                Sosyal becerilerin geliştirilmesi, dil ve iletişim özellikleri, oyun becerileri gibi
+                                konularda da ailelerin ihtiyaçlarına yönelik rehberlik sağlıyoruz. Online Otizm Danışma,
+                                otizmle ilgili her adımda yanınızda!
                             </p>
                         </div>
                     </div>
