@@ -53,6 +53,7 @@ export default function Blog() {
 
             {/* Schema Markup */}
             <Script
+                id="schema-markup"
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
