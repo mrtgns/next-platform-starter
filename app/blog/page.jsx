@@ -6,6 +6,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/config';
 import Head from 'next/head';
 import Script from 'next/script';
+import Image from 'next/image';
 
 export default function Blog() {
     const [blogs, setBlogs] = useState([]);
@@ -75,10 +76,14 @@ export default function Blog() {
                         <div key={blog.id} className="p-4 md:w-1/3">
                             <div className="h-full border-2 border-gray-500 border-opacity-60 rounded-lg overflow-hidden bg-gray-700">
                                 {/* Blog Resmi */}
-                                <img
-                                    className="lg:h-48 md:h-36 w-full object-cover object-center"
-                                    src={blog.resim || "https://dummyimage.com/720x400"} // Varsayılan resim ekledim
-                                    alt={blog.baslik}
+                                <Image
+                                    src={`/blog-resimleri/${blog.resim || 'default-blog.png'}`} // Public klasörü altında blog-resimleri dizini
+                                    alt={blog.baslik} // SEO için başlığı alt text olarak kullan
+                                    width={500}
+                                    height={300}
+                                    className="w-full h-48 object-cover"
+                                    quality={75}
+                                    loading="lazy"
                                 />
                                 <div className="p-6">
                                     {/* Başlık */}
