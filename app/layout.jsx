@@ -5,16 +5,33 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s - Online Otizm Danışma',
-        default: 'Online Otizm Danışma - Otizm Rehberlik ve Destek',
-        icons: {
-            icon: ['/favicon.ico?v=4'],
-            apple: ['/apple-touch-icon.png?v=4'],
-            shortcut: ['/apple-touch-icon.png']
-        }
+        default: 'Online Otizm Danışma - Otizm Rehberlik ve Destek'
+    },
+    icons: {
+        icon: ['/favicon.ico?v=4'],
+        apple: ['/apple-touch-icon.png?v=4'],
+        shortcut: ['/apple-touch-icon.png']
     }
 };
 
 export default function RootLayout({ children }) {
+    // JSON-LD Schema Markup
+    const schemaData = {
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'Online Otizm Danışma',
+        description: 'Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği.',
+        url: 'https://onlineotizmdanisma.com',
+        logo: 'https://onlineotizmdanisma.com/public/Logo.png', // Logonuzun tam URL'sini ekleyin
+        serviceType: 'Online Danışmanlık',
+        areaServed: 'Türkiye',
+        contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '+905411808198', // Gerçek telefon numaranızı ekleyin
+            contactType: 'Müşteri Hizmetleri'
+        }
+    };
+
     return (
         <html lang="tr">
             <head>
@@ -23,44 +40,37 @@ export default function RootLayout({ children }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta
                     name="description"
-                    content="Online Otizm Danışma, otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği sağlar."
+                    content="Online Otizm Danışma: Otizm belirtileri, erken tanı, evde eğitim ve rehabilitasyon süreçlerinde uzman rehberlik. Aileler için özel çözümler!"
                 />
                 <meta
                     name="keywords"
-                    content="otizm, otizm danışmanlık, otizm eğitimi, özel eğitim, otizm destek, aile rehberliği, bireysel eğitim, otizm spektrum"
+                    content="otizm belirtileri, erken tanı, otizm eğitimi, özel eğitim merkezi, otizmli çocuklarla iletişim, evde otizm desteği, otizm danışmanlık"
                 />
                 <meta name="author" content="Online Otizm Danışma" />
+                <meta name="publisher" content="Online Otizm Danışma" />
                 <meta name="google-site-verification" content="O56gcdRhHe0H3HNWbT24NSxcKbei7w1I03WAY_3l1PY" />
 
                 {/* Sosyal Medya Open Graph Etiketleri */}
                 <meta property="og:title" content="Online Otizm Danışma - Otizm Rehberlik ve Destek" />
                 <meta
                     property="og:description"
-                    content="Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği sağlayan platform."
+                    content="Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği."
                 />
-                <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
-                <meta property="og:url" content="https://yourwebsite.com" />
+                <meta property="og:image" content="https://onlineotizmdanisma.com/og-image.jpg" />
+                <meta property="og:url" content="https://onlineotizmdanisma.com" />
                 <meta property="og:type" content="website" />
+                <meta property="og:locale" content="tr_TR" />
 
-                {/* Twitter Card Etiketleri */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Online Otizm Danışma - Otizm Rehberlik ve Destek" />
-                <meta
-                    name="twitter:description"
-                    content="Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği sağlayan platform."
-                />
-                <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
-
-                {/* Favicons */}
-                <link rel="icon" href="/favicon.ico" />
-                <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-                <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
+                {/* Favicons ve Performans */}
+                <link rel="canonical" href="https://onlineotizmdanisma.com" />
+                <link rel="icon" href="https://onlineotizmdanisma.com/favicon.ico" />
+                <link rel="apple-touch-icon" href="https://onlineotizmdanisma.com/apple-touch-icon.png" />
                 <link rel="manifest" href="/site.webmanifest" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-
-                {/* Ekstra SEO ve Performans */}
-                <link rel="canonical" href="https://yourwebsite.com" />
-                <meta name="robots" content="index, follow" />
+                {/* Schema Markup */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
             </head>
             <body>
                 <Header />

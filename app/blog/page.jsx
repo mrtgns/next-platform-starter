@@ -31,11 +31,11 @@ export default function Blog() {
     }, []);
 
     if (loading) {
-        return <div className="text-center text-lg">Yükleniyor...</div>;
+        return <div className="text-center text-lg text-gray-300">Yükleniyor...</div>;
     }
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="bg-gray-600 min-h-screen py-12">
             {/* SEO için Meta Etiketleri */}
             <Head>
                 <title>Blog Yazıları | Güncel İçerikler ve Haberler</title>
@@ -47,7 +47,6 @@ export default function Blog() {
                     name="keywords"
                     content="Çocuğumda otizm belirtileri nelerdir?,Otizm teşhisi nasıl konur?,Evde otizmli çocuğumla nasıl çalışabilirim?,otizm"
                 />
-
                 <meta name="robots" content="index, follow" />
             </Head>
 
@@ -67,21 +66,55 @@ export default function Blog() {
             />
 
             {/* Sayfa Başlığı */}
-            <h1 className="text-3xl font-bold text-center mb-6">Blog Yazıları</h1>
+            <h1 className="text-3xl font-bold text-center mb-12 text-gray-100">Blog Yazıları</h1>
 
             {/* Blog Kartları */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {blogs.map((blog) => (
-                    <article key={blog.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-                        <div className="p-4">
-                            <h2 className="text-xl font-semibold mb-2">{blog.baslik}</h2>
-                            <p className="text-gray-700">{blog.icerik.slice(0, 100)}...</p>
-                            <Link href={`/blog/${blog.id}`} className="text-blue-500 hover:underline">
-                                Daha Fazla
-                            </Link>
+            <div className="container px-5 mx-auto">
+                <div className="flex flex-wrap -m-4">
+                    {blogs.map((blog) => (
+                        <div key={blog.id} className="p-4 md:w-1/3">
+                            <div className="h-full border-2 border-gray-500 border-opacity-60 rounded-lg overflow-hidden bg-gray-700">
+                                {/* Blog Resmi */}
+                                <img
+                                    className="lg:h-48 md:h-36 w-full object-cover object-center"
+                                    src={blog.resim || "https://dummyimage.com/720x400"} // Varsayılan resim ekledim
+                                    alt={blog.baslik}
+                                />
+                                <div className="p-6">
+                                    {/* Başlık */}
+                                    <h1 className="title-font text-lg font-medium text-gray-100 mb-3">
+                                        {blog.baslik}
+                                    </h1>
+                                    {/* İçerik */}
+                                    <p className="leading-relaxed mb-3 text-gray-300">
+                                        {blog.icerik[0].slice(0, 100)}... {/* İlk arrayın ilk 100 karakteri */}
+                                    </p>
+                                    {/* Buton */}
+                                    <div className="flex items-center justify-end">
+                                        <Link
+                                            href={`/blog/${blog.id}`}
+                                            className="text-indigo-400 inline-flex items-center hover:text-indigo-300"
+                                        >
+                                            Devamını Oku
+                                            <svg
+                                                className="w-4 h-4 ml-2"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            >
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </article>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );

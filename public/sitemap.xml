@@ -3,15 +3,23 @@
     <!-- Ana Sayfa -->
     <url>
         <loc>https://onlineotizmdanisma.com/</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2024-05-30</lastmod>  <!-- Güncel tarih ekledim -->
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- Blog Sayfası (Eksik olan) -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/blog</loc>
+        <lastmod>2024-05-30</lastmod>  <!-- Son güncelleme tarihi -->
+        <changefreq>weekly</changefreq>  <!-- Blog sık güncelleniyorsa -->
+        <priority>0.8</priority>        <!-- Öncelik değeri -->
     </url>
 
     <!-- Hakkımızda Sayfası -->
     <url>
         <loc>https://onlineotizmdanisma.com/about</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2024-05-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -19,7 +27,7 @@
     <!-- Hizmetlerimiz Sayfası -->
     <url>
         <loc>https://onlineotizmdanisma.com/services</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2024-05-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -27,7 +35,7 @@
     <!-- İletişim Sayfası -->
     <url>
         <loc>https://onlineotizmdanisma.com/contact</loc>
-        <lastmod>2024-12-30</lastmod>
+        <lastmod>2024-05-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

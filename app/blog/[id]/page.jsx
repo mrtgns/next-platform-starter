@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // Next.js Router'dan parametreyi al
+import { useParams } from "next/navigation";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
@@ -32,17 +32,25 @@ export default function BlogDetail() {
   }, [id]);
 
   if (loading) {
-    return <div>Yükleniyor...</div>;
+    return <div className="text-center text-lg text-gray-300">Yükleniyor...</div>;
   }
 
   if (!blog) {
-    return <div>Blog bulunamadı.</div>;
+    return <div className="text-center text-lg text-gray-300">Blog bulunamadı.</div>;
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">{blog.baslik}</h1>
-      <p>{blog.icerik}</p>
+    <div className="bg-gray-600 min-h-screen py-12">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <h1 className="text-3xl font-bold mb-6 text-gray-100">{blog.baslik}</h1>
+        <div className="text-lg leading-relaxed space-y-6">
+          {blog.icerik.map((paragraph, index) => (
+            <p key={index} className="text-gray-300">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
