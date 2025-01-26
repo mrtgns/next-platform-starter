@@ -76,15 +76,19 @@ export default function Blog() {
                         <div key={blog.id} className="p-4 md:w-1/3">
                             <div className="h-full border-2 border-gray-500 border-opacity-60 rounded-lg overflow-hidden bg-gray-700">
                                 {/* Blog Resmi */}
-                                <Image
-                                    src={`/blog-resimleri/${blog.resim || 'default-blog.png'}`} // Public klasörü altında blog-resimleri dizini
-                                    alt={blog.baslik} // SEO için başlığı alt text olarak kullan
-                                    width={500}
-                                    height={300}
-                                    className="w-full h-48 object-cover"
-                                    quality={75}
-                                    loading="lazy"
-                                />
+                                <div className="relative w-full h-48">
+                                <div className="w-full h-48">
+    <Image
+        src={`/blog-resimleri/${blog.resim || 'default-blog.png'}`}
+        alt={blog.baslik}
+        fill
+        sizes="100vw"
+        className="object-cover"
+        quality={75}
+        loading="lazy"
+    />
+</div>
+</div>
                                 <div className="p-6">
                                     {/* Başlık */}
                                     <h1 className="title-font text-lg font-medium text-gray-100 mb-3">
