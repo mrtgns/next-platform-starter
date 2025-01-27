@@ -40,7 +40,7 @@ export default function HomePage() {
                         {/* Resim */}
                         <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
                             <Image
-                                src="/home-pic.jpg"
+                                src="/home-pic-optimized.webp"
                                 alt="Otizm danışmanlık görseli"
                                 width={500}
                                 height={500}
