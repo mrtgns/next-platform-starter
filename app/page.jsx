@@ -2,8 +2,43 @@
 
 import Image from 'next/image';
 import Head from 'next/head';
-
+import { useEffect } from 'react';
 export default function HomePage() {
+    //bu kod chat bot için yazıldı. chatbase
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...args) => {
+                    if (!window.chatbase.q) {
+                        window.chatbase.q = [];
+                    }
+                    window.chatbase.q.push(args);
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") {
+                            return target.q;
+                        }
+                        return (...args) => target(prop, ...args);
+                    },
+                });
+            }
+    
+            const onLoad = function () {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "WAlB5bCRUkhz_HGkJ5QJc";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script);
+            };
+    
+            if (document.readyState === "complete") {
+                onLoad();
+            } else {
+                window.addEventListener("load", onLoad);
+            }
+        }
+    }, []);
     return (
         <>
             <Head>
@@ -16,7 +51,7 @@ export default function HomePage() {
                     name="keywords"
                     content="Otizm danışmanlık, bireysel eğitim, sosyal beceriler, aile rehberliği, otizm destek"
                 />
-                <meta name="author" content="Engelsiz Beceriler" />
+                <meta name="author" content="online otizm danışma" />
                 <meta name="robots" content="index, follow" />
 
                 {/* Open Graph Meta Tags */}
@@ -25,8 +60,8 @@ export default function HomePage() {
                     property="og:description"
                     content="Otizmli çocuklar ve aileleri için bireysel eğitim, terapi rehberliği, sosyal beceri geliştirme, aile desteği ve daha fazlası."
                 />
-                <meta property="og:image" content="https://siteniz.com/path-to-your-logo.png" />
-                <meta property="og:url" content="https://siteniz.com/" />
+                <meta property="og:image" content="https://onlineotizmdanisma.com/favicon.ico" />
+                <meta property="og:url" content="https://onlineotizmdanisma.com/" />
                 <meta property="og:type" content="website" />
 
                 {/* Favicon */}
@@ -129,7 +164,7 @@ export default function HomePage() {
                 </div>
 
                 {/* WhatsApp Butonu */}
-                <a
+                {/* <a
                     href="https://wa.me/905411808198"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -139,7 +174,7 @@ export default function HomePage() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 0C5.37 0 0 5.37 0 12c0 2.13.56 4.15 1.63 5.94L0 24l6.31-1.63A11.91 11.91 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0zm5.95 17.4l-.88-.43c-.45-.22-.78-.2-1.11.14l-.33.33c-.22.22-.56.44-.88.33a9.67 9.67 0 01-4.63-4.63c-.11-.33 0-.66.33-.88l.33-.33c.34-.34.36-.67.14-1.11l-.44-.89c-.22-.45-.56-.67-.9-.56-.56.11-1.1.45-1.56.9-.56.56-1.22 1.45-1.22 2.33 0 .22 0 .45.11.67a12.49 12.49 0 006.66 6.66c.22.11.45.11.67.11.89 0 1.78-.67 2.33-1.22.45-.45.79-.89.9-1.56.11-.33-.11-.67-.56-.89z" />
                     </svg>
-                </a>
+                </a> */}
             </main>
         </>
     );
