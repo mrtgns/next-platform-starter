@@ -12,16 +12,56 @@ export default function Services() {
       icon: "🎓",
     },
     {
-      title: "Aile Rehberliği",
-      description:
-        "Ailelerin çocuklarına en iyi şekilde destek verebilmeleri için rehberlik sağlıyoruz.",
+      title: "Aile Desteği ve Eğitimi",
+      description: "Aile üyelerinin otizm konusunda bilinçlenmesi ve çocuğa nasıl destek olabilecekleri konusunda eğitimler.",
       icon: "👨‍👩‍👧‍👦",
     },
+    
     {
       title: "Online Eğitim ve Destek",
       description:
         "Evden eğitim desteği almak isteyenler için çevrimiçi çözümler sunuyoruz.",
       icon: "💻",
+    },
+    {
+      title: "Eğitim ve Terapi Rehberliği",
+      description: "Otizmli çocuklar için uygun eğitim ve terapi programları hakkında bilgi ve rehberlik sağlamak.",
+      icon: "📚",
+    },
+    {
+      title: "Sosyal Becerilerin Geliştirilmesi",
+      description: "Çocukların sosyal becerilerini geliştirmek için etkinlik önerileri ve yöntemler sunmak.",
+      icon: "🤝",
+    },
+    {
+      title: "Davranış Yönetimi",
+      description: "Davranış problemleri ile başa çıkma stratejileri ve pozitif davranış yönetimi teknikleri.",
+      icon: "🧠",
+    },
+    {
+      title: "Motor Becerilerin Geliştirilmesi",
+      description: "Ergoterapist eşliğinde evde çocukların motor becerilerini geliştirmek için egzersiz teknikleri.",
+      icon: "🏃‍♂️",
+    },
+    {
+      title: "İletişim Becerilerinin Desteklenmesi",
+      description: "Çocukların iletişim becerilerini geliştirmek için öneriler ve araçlar.",
+      icon: "🗣️",
+    },
+    {
+      title: "Erken Müdahale Programları",
+      description: "Erken tanı ve müdahale programları hakkında bilgi ve yönlendirme.",
+      icon: "⏳",
+    },
+    {
+      title: "Ulaşılabilir Kaynak Bulma",
+      description: "Aileler için çevrimiçi destek ve kaynak bilgileri.",
+      icon: "🔍",
+    },
+    {
+      title: "Günlük Yaşam Becerileri",
+      description: "Günlük yaşamda bağımsızlık kazanmak için pratik beceriler ve ipuçları.",
+      icon: "🏡",
     },
   ];
 
