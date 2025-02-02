@@ -3,11 +3,11 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import { useEffect } from 'react';
+
 export default function HomePage() {
-    //bu kod chat bot için yazıldı. chatbase
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        if (typeof window !== 'undefined') {
+            if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
                 window.chatbase = (...args) => {
                     if (!window.chatbase.q) {
                         window.chatbase.q = [];
@@ -16,45 +16,83 @@ export default function HomePage() {
                 };
                 window.chatbase = new Proxy(window.chatbase, {
                     get(target, prop) {
-                        if (prop === "q") {
+                        if (prop === 'q') {
                             return target.q;
                         }
                         return (...args) => target(prop, ...args);
-                    },
+                    }
                 });
             }
-    
-            const onLoad = function () {
-                const script = document.createElement("script");
-                script.src = "https://www.chatbase.co/embed.min.js";
-                script.id = "WAlB5bCRUkhz_HGkJ5QJc";
-                script.domain = "www.chatbase.co";
+
+            const onLoad = () => {
+                const script = document.createElement('script');
+                script.src = 'https://www.chatbase.co/embed.min.js';
+                script.id = 'WAlB5bCRUkhz_HGkJ5QJc';
+                script.dataset.domain = 'www.chatbase.co';
                 document.body.appendChild(script);
             };
-    
-            if (document.readyState === "complete") {
+
+            if (document.readyState === 'complete') {
                 onLoad();
             } else {
-                window.addEventListener("load", onLoad);
+                window.addEventListener('load', onLoad);
             }
         }
     }, []);
+
+    const services = [
+        {
+            title: 'Eğitim ve Terapi Rehberliği',
+            description:
+                'Otizmli çocuklar için uygun eğitim ve terapi programları hakkında bilgi ve rehberlik sağlamak.'
+        },
+        {
+            title: 'Sosyal Becerilerin Geliştirilmesi',
+            description: 'Çocukların sosyal becerilerini geliştirmek için etkinlik önerileri ve yöntemler sunmak.'
+        },
+        {
+            title: 'Aile Desteği ve Eğitimi',
+            description:
+                'Aile üyelerinin otizm konusunda bilinçlenmesi ve çocuğa nasıl destek olabilecekleri konusunda eğitimler.'
+        },
+        {
+            title: 'Davranış Yönetimi',
+            description: 'Davranış problemleri ile başa çıkma stratejileri ve pozitif davranış yönetimi teknikleri.'
+        },
+        {
+            title: 'Motor Becerilerin Geliştirilmesi',
+            description:
+                'Ergoterapist eşliğinde evde çocukların motor becerilerini geliştirmek için egzersiz teknikleri.'
+        },
+        {
+            title: 'İletişim Becerilerinin Desteklenmesi',
+            description: 'Çocukların iletişim becerilerini geliştirmek için öneriler ve araçlar.'
+        },
+        {
+            title: 'Erken Müdahale Programları',
+            description: 'Erken tanı ve müdahale programları hakkında bilgi ve yönlendirme.'
+        },
+        { title: 'Ulaşılabilir Kaynak Bulma', description: 'Aileler için çevrimiçi destek ve kaynak bilgileri.' },
+        {
+            title: 'Günlük Yaşam Becerileri',
+            description: 'Günlük yaşamda bağımsızlık kazanmak için pratik beceriler ve ipuçları.'
+        }
+    ];
+
     return (
         <>
             <Head>
                 <title>Online Otizm Danışma - Engelsiz Beceriler</title>
                 <meta
                     name="description"
-                    content="Otizmli çocuklar ve aileleri için bireysel eğitim, terapi rehberliği, sosyal beceri geliştirme, aile desteği ve daha fazlası. Otizm yolculuğunuzda yanınızdayız."
+                    content="Otizmli çocuklar ve aileleri için bireysel eğitim, terapi rehberliği, sosyal beceri geliştirme, aile desteği ve daha fazlası."
                 />
                 <meta
                     name="keywords"
                     content="Otizm danışmanlık, bireysel eğitim, sosyal beceriler, aile rehberliği, otizm destek"
                 />
-                <meta name="author" content="online otizm danışma" />
+                <meta name="author" content="Online Otizm Danışma" />
                 <meta name="robots" content="index, follow" />
-
-                {/* Open Graph Meta Tags */}
                 <meta property="og:title" content="Online Otizm Danışma - Engelsiz Beceriler" />
                 <meta
                     property="og:description"
@@ -63,106 +101,48 @@ export default function HomePage() {
                 <meta property="og:image" content="https://onlineotizmdanisma.com/favicon.ico" />
                 <meta property="og:url" content="https://onlineotizmdanisma.com/" />
                 <meta property="og:type" content="website" />
-
-                {/* Favicon */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className="bg-gray-600 text-gray-400 min-h-screen py-10 px-4">
                 <div className="container mx-auto max-w-4xl">
-                    {/* Başlık ve Görsel */}
                     <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
-                        {/* Resim */}
                         <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
                             <Image
                                 src="/home-pic-optimized.webp"
                                 alt="Otizm danışmanlık görseli"
                                 width={500}
                                 height={500}
-                                className="object-cover"
+                                className="object-cover rounded-lg shadow-md"
                                 priority
                             />
                         </div>
-                        {/* Yazı */}
                         <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
                             <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
-                            <p className="text-lg text-gray-400 mt-4">
+                            <p className="text-lg text-gray-300 mt-4 leading-relaxed">
                                 Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek
-                                sağlar. Otizmin belirtileri, tanı süreci ve erken tanının önemi hakkında bilgi sunar.
-                                Ailelere, evde yapılabilecek çalışmalar, rehabilitasyon seçimi ve eğitim yöntemleri
-                                konusunda rehberlik eder. Sosyal beceriler, dil ve iletişim, oyun becerileri gibi
-                                alanlarda destek verir. Ergoterapistler eşliğinde hazırlanan günlük yaşam becerileri geliştirilir
-                                ve duyusal düzenleme ihtiyaçları karşılanır. Ayrıca, hareket eğitimleri ile beden
-                                farkındalığı, motor koordinasyon ve fiziksel aktiviteye katılım artırılır.Dil
-                                terapistleri ile çocuğun iletişim becerilerinin desteklenmesine yönelik öneriler
-                                sunuyoruz. Online Otizm Danışma, her adımda yanınızda!
+                                sağlar. Erken tanı, sosyal beceri geliştirme, iletişim desteği ve günlük yaşam
+                                becerilerinin kazandırılması gibi birçok alanda uzman desteği sunar. Online Otizm
+                                Danışma, her adımda yanınızda!
                             </p>
                         </div>
                     </div>
 
-                    {/* Hizmetler */}
                     <section className="mb-10">
                         <h2 className="text-2xl font-semibold text-gray-100 mb-4">Hizmetlerimiz</h2>
                         <div className="space-y-6">
-                            {[
-                                {
-                                    title: 'Eğitim ve Terapi Rehberliği',
-                                    description:
-                                        'Otizmli çocuklar için uygun eğitim ve terapi programları hakkında bilgi ve rehberlik sağlamak.'
-                                },
-                                {
-                                    title: 'Sosyal Becerilerin Geliştirilmesi',
-                                    description:
-                                        'Çocukların sosyal becerilerini geliştirmek için etkinlik önerileri ve yöntemler sunmak.'
-                                },
-                                {
-                                    title: 'Aile Desteği ve Eğitimi',
-                                    description:
-                                        'Aile üyelerinin otizm konusunda bilinçlenmesi ve çocuğa nasıl destek olabilecekleri konusunda eğitimler.'
-                                },
-                                {
-                                    title: 'Davranış Yönetimi',
-                                    description:
-                                        'Davranış problemleri ile başa çıkma stratejileri ve pozitif davranış yönetimi teknikleri.'
-                                },
-                                {
-                                    title: 'Motor Becerilerin Geliştirilmesi',
-                                    description:
-                                        'Ergoterapist eşliğinde evde çocukların motor becerilerini geliştirmek için egzersiz teknikleri.'
-                                },
-                                {
-                                    title: 'İletişim Becerilerinin Desteklenmesi',
-                                    description:
-                                        'Çocukların iletişim becerilerini geliştirmek için öneriler ve araçlar.'
-                                },
-                                {
-                                    title: 'Erken Müdahale Programları',
-                                    description: 'Erken tanı ve müdahale programları hakkında bilgi ve yönlendirme.'
-                                },
-                                {
-                                    title: 'Ulaşılabilir Kaynak Bulma',
-                                    description: 'Aileler çevrimiçi destek  ve kaynak bilgileri.'
-                                },
-                                {
-                                    title: 'Günlük Yaşam Becerileri',
-                                    description:
-                                        'Günlük yaşamda bağımsızlık kazanmak için pratik beceriler ve ipuçları.'
-                                }
-                            ].map((service, index) => (
+                            {services.map((service, index) => (
                                 <div
                                     key={index}
                                     className="bg-gray-700 p-6 rounded-lg shadow-md hover:bg-gray-600 transition duration-200"
                                 >
                                     <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.title}</h3>
-                                    <ul className="list-disc pl-6 text-gray-300">
-                                        <li>{service.description}</li>
-                                    </ul>
+                                    <p className="text-gray-300">{service.description}</p>
                                 </div>
                             ))}
                         </div>
                     </section>
                 </div>
-
                 {/* WhatsApp Butonu */}
                 {/* <a
                     href="https://wa.me/905411808198"
