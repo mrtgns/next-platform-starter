@@ -48,7 +48,6 @@ export default function Blog() {
                     content="Çocuğumda otizm belirtileri nelerdir?, Otizm teşhisi nasıl konur?, Evde otizmli çocuğumla nasıl çalışabilirim?, otizm"
                 />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://onlineotizmdanisma.com" />
             </Head>
 
             <Script
@@ -79,12 +78,14 @@ export default function Blog() {
                                         fill
                                         sizes="100vw"
                                         className="object-cover rounded-t-lg"
-                                        quality={60}
+                                        quality={75}
                                         loading="lazy"
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <h2 className="text-xl font-semibold text-gray-100 mb-3 truncate">{blog.baslik}</h2>
+                                    <h2 className="text-xl font-semibold text-gray-100 mb-3 truncate">
+                                        {blog.baslik}
+                                    </h2>
                                     <p className="leading-relaxed text-gray-300 mb-4">
                                         {blog.icerik[0].slice(0, 100)}...
                                     </p>
@@ -114,8 +115,6 @@ export default function Blog() {
                     ))}
                 </div>
             </div>
-
-            <Script src="https://www.chatbase.co/embed.min.js" async></Script>
         </div>
     );
 }
