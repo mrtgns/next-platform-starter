@@ -66,27 +66,25 @@ export default function Blog() {
 
             <h1 className="text-3xl font-bold text-center mb-12 text-gray-100">Blog Yazıları</h1>
 
-            <div className="container px-5 mx-auto">
-                <div className="flex flex-wrap -m-4">
+            <div className="container max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-wrap gap-4 justify-center">
                     {blogs.map((blog) => (
-                        <div key={blog.id} className="p-4 md:w-1/3">
+                        <div key={blog.id} className="w-full sm:w-1/2 lg:w-1/3 p-2">
                             <div className="h-full border-2 border-gray-500 border-opacity-60 rounded-lg overflow-hidden bg-gray-700">
                                 <div className="relative w-full h-48">
                                     <Image
                                         src={`/blog-resimleri/${blog.resim || 'default-blog.png'}`}
                                         alt={blog.baslik}
                                         fill
-                                        sizes="100vw"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover rounded-t-lg"
                                         quality={75}
                                         loading="lazy"
                                     />
                                 </div>
-                                <div className="p-6">
-                                    <h2 className="text-xl font-semibold text-gray-100 mb-3 truncate">
-                                        {blog.baslik}
-                                    </h2>
-                                    <p className="leading-relaxed text-gray-300 mb-4">
+                                <div className="p-4">
+                                    <h2 className="text-xl font-semibold text-gray-100 mb-2 truncate">{blog.baslik}</h2>
+                                    <p className="leading-relaxed text-gray-300 mb-3">
                                         {blog.icerik[0].slice(0, 100)}...
                                     </p>
                                     <div className="flex justify-end">
