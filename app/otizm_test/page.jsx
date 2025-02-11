@@ -12,6 +12,7 @@ export default function OtizmTesti() {
         day: '',
         month: '',
         year: '',
+        sehir:'',
         answers: Array(20).fill(null)
     });
 
@@ -63,7 +64,7 @@ export default function OtizmTesti() {
         let toplamHayirSayisi = 0;
 
         answers.forEach((cevap, index) => {
-            if (cevap === "Hayır") {
+            if (cevap === 'Hayır') {
                 toplamHayirSayisi++;
                 if (kritikSorular.includes(index + 1)) {
                     kritikHayirSayisi++;
@@ -73,18 +74,26 @@ export default function OtizmTesti() {
 
         if (kritikHayirSayisi >= 2 || toplamHayirSayisi >= 8) {
             return {
-                risk: "🚨 Yüksek Risk",
+                risk: '🚨 Yüksek Risk',
                 mesaj: `
-                Yaptığız test sonucuna göre çocuğunuzun otizm açısından **yüksek risk taşıdığı** görülmektedir.  
-                **Önerilen Adımlar:**  
-                - En kısa sürede bir çocuk nöroloğu veya gelişim uzmanına danışmalısınız.  
-                - **Online Otizm Danışmanlığı** hizmetimizden yararlanarak gelişim sürecine destek olabilirsiniz.  
-                - Erken müdahale, çocuğunuzun gelişimi için büyük bir avantaj sağlar.  
+                Yaptığınız test sonucuna göre çocuğunuzun otizm açısından **yüksek risk taşıdığı** görülmektedir.  
+
+### **Önerilen Adımlar:**  
+- En kısa sürede bir çocuk nöroloğu veya gelişim uzmanına danışmalısınız.  
+- **Online Otizm Danışmanlığı** hizmetimizden yararlanarak gelişim sürecine destek olabilirsiniz.  
+- Erken müdahale, çocuğunuzun gelişimi için büyük bir avantaj sağlar.  
+
+🔹 **Daha Kapsamlı Destek İçin:**  
+**Online Otizm Danışma** ile iletişime geçerek çocuğunuza özel **daha detaylı bir değerlendirme yaptırabilir** ve bireyselleştirilmiş **eğitsel program** hazırlatabilirsiniz.  
+
+**Evde uygulayabileceğiniz özel eğitim programları** ile çocuğunuzun **sosyal, iletişim ve bilişsel becerilerini** destekleyebilir, gelişim sürecine bilinçli bir şekilde katkıda bulunabilirsiniz.  
+
+📞 **Detaylı bilgi ve destek için bizimle iletişime geçin!** 
                 `
             };
         } else if (kritikHayirSayisi === 1 || toplamHayirSayisi >= 3) {
             return {
-                risk: "⚠️ Orta Risk",
+                risk: '⚠️ Orta Risk',
                 mesaj: `
                 Yaptığız test sonucuna göre çocuğunuzda otizme işaret edebilecek bazı belirtiler olabilir.  
                 **Ne Yapmalısınız?**  
@@ -95,7 +104,7 @@ export default function OtizmTesti() {
             };
         } else {
             return {
-                risk: "✅ Düşük Risk",
+                risk: '✅ Düşük Risk',
                 mesaj: `
                 Yaptığız test sonucuna göre çocuğunuzun otizm riski düşük görünüyor. Ancak gelişimini takip etmeye devam edin.  
                 **Önerilen Adımlar:**  
@@ -116,6 +125,7 @@ export default function OtizmTesti() {
             !formData.day ||
             !formData.month ||
             !formData.year ||
+            !formData.sehir||
             formData.answers.includes(null)
         ) {
             setError('Lütfen tüm zorunlu alanları doldurun ve tüm soruları yanıtlayın.');
@@ -129,6 +139,7 @@ export default function OtizmTesti() {
         try {
             await addDoc(collection(db, 'otizm_testleri'), {
                 name: formData.name,
+                sehir: formData.sehir,
                 phone: formData.phone,
                 email: formData.email,
                 birthDate: new Date(`${formData.year}-${formData.month}-${formData.day}`),
@@ -167,16 +178,26 @@ export default function OtizmTesti() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
-                <h1 className="text-2xl font-bold text-center mb-4">Otizm Testi</h1>
+                <h1 className="text-2xl font-bold text-center mb-4">M-CHAT-R/F Testi</h1>
+                <p className="text-xl  text-center mb-4">Amerikan Psikiyatri Derneği Tanı Kriterleri</p>
                 {error && <p className="text-red-500 text-center">{error}</p>}
                 <form onSubmit={handleSubmit}>
-                    
-                     {/* Ad Soyad */}
-                     <label className="block font-medium mb-1">Ad Soyad*</label>
+                    {/* Ad Soyad */}
+                    <label className="block font-medium mb-1">Ad Soyad*</label>
                     <input
                         type="text"
                         name="name"
                         value={formData.name}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded mb-4"
+                        required
+                    />
+                    {/* Şehir */}
+                    <label className="block font-medium mb-1">Şehir*</label>
+                    <input
+                        type="text"
+                        name="sehir"
+                        value={formData.sehir}
                         onChange={handleChange}
                         className="w-full p-2 border rounded mb-4"
                         required
@@ -207,25 +228,67 @@ export default function OtizmTesti() {
                     {/* Doğum Tarihi */}
                     <label className="block font-medium mb-1">Çocuğun Doğum Tarihi*</label>
                     <div className="flex gap-2 mb-4">
-                        <input type="number" name="day" value={formData.day} onChange={handleChange} className="w-1/3 p-2 border rounded" placeholder="Gün" required />
-                        <input type="number" name="month" value={formData.month} onChange={handleChange} className="w-1/3 p-2 border rounded" placeholder="Ay" required />
-                        <input type="number" name="year" value={formData.year} onChange={handleChange} className="w-1/3 p-2 border rounded" placeholder="Yıl" required />
+                        <input
+                            type="number"
+                            name="day"
+                            value={formData.day}
+                            onChange={handleChange}
+                            className="w-1/3 p-2 border rounded"
+                            placeholder="Gün"
+                            required
+                        />
+                        <input
+                            type="number"
+                            name="month"
+                            value={formData.month}
+                            onChange={handleChange}
+                            className="w-1/3 p-2 border rounded"
+                            placeholder="Ay"
+                            required
+                        />
+                        <input
+                            type="number"
+                            name="year"
+                            value={formData.year}
+                            onChange={handleChange}
+                            className="w-1/3 p-2 border rounded"
+                            placeholder="Yıl"
+                            required
+                        />
                     </div>
 
                     {/* Sorular */}
                     {questions.map((question, index) => (
                         <div key={index} className="mb-4">
-                            <p className="font-medium">{index + 1}. {question}</p>
+                            <p className="font-medium">
+                                {index + 1}. {question}
+                            </p>
                             <div className="flex gap-4 mt-2">
-                                <button type="button" onClick={() => handleAnswer(index, 'Evet')} className={`p-2 rounded ${formData.answers[index] === 'Evet' ? 'bg-green-600 text-white' : 'bg-gray-200'}`}>Evet</button>
-                                <button type="button" onClick={() => handleAnswer(index, 'Hayır')} className={`p-2 rounded ${formData.answers[index] === 'Hayır' ? 'bg-red-600 text-white' : 'bg-gray-200'}`}>Hayır</button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleAnswer(index, 'Evet')}
+                                    className={`p-2 rounded ${
+                                        formData.answers[index] === 'Evet' ? 'bg-green-600 text-white' : 'bg-gray-200'
+                                    }`}
+                                >
+                                    Evet
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleAnswer(index, 'Hayır')}
+                                    className={`p-2 rounded ${
+                                        formData.answers[index] === 'Hayır' ? 'bg-red-600 text-white' : 'bg-gray-200'
+                                    }`}
+                                >
+                                    Hayır
+                                </button>
                             </div>
                         </div>
                     ))}
 
-                    
-
-                    <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 mt-4">Testi Gönder</button>
+                    <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 mt-4">
+                        Testi Gönder
+                    </button>
                 </form>
             </div>
         </div>

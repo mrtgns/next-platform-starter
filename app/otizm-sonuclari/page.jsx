@@ -166,6 +166,7 @@ const calculateAge = (birthDate) => {
                                 <th className="border border-gray-300 p-2">Ad Soyad</th>
                                 <th className="border border-gray-300 p-2">Yaş</th>
                                 <th className="border border-gray-300 p-2">Telefon</th>
+                                <th className="border border-gray-300 p-2">Şehir</th>
                                 <th className="border border-gray-300 p-2">E-Posta</th>
                                 <th className="border border-gray-300 p-2">Yanıtlar</th>
                                 <th className="border border-gray-300 p-2">Risk Seviyesi</th>
@@ -181,6 +182,7 @@ const calculateAge = (birthDate) => {
                                         <td className="border border-gray-300 p-2">{result.name || 'Bilinmiyor'}</td>
                                         <td className="border border-gray-300 p-2">{calculateAge(result.birthDate)}</td>
                                         <td className="border border-gray-300 p-2">{result.phone || 'Yok'}</td>
+                                        <td className="border border-gray-300 p-2">{result.sehir || 'Yok'}</td>
                                         <td className="border border-gray-300 p-2">{result.email || 'Yok'}</td>
                                         <td className="border border-gray-300 p-2">
                                             {result.answers ? result.answers.join(', ') : 'Yanıt Yok'}

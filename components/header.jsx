@@ -42,7 +42,7 @@ export function Header() {
           </Link>
           <Link href="/otizm_test">
             <span className="text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
-              Otizm Test
+             Çocuğumu Değerlendir
             </span>
           </Link>
           
@@ -95,7 +95,7 @@ export function Header() {
           </Link>
           <Link href="/otizm_test">
             <span className="block text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
-              Otizm Test
+             Çocuğumu Değerlendir
             </span>
           </Link>
           <Link href="/contact">
