@@ -40,6 +40,11 @@ export function Header() {
               Blog
             </span>
           </Link>
+          <Link href="/otizm_test">
+            <span className="text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
+              Otizm Test
+            </span>
+          </Link>
           
           <Link href="/contact">
             <span className="text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
@@ -86,6 +91,11 @@ export function Header() {
           <Link href="/blog">
             <span className="block text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
               Blog
+            </span>
+          </Link>
+          <Link href="/otizm_test">
+            <span className="block text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
+              Otizm Test
             </span>
           </Link>
           <Link href="/contact">

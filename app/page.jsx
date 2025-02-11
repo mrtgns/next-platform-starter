@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 export default function HomePage() {
@@ -106,27 +107,36 @@ export default function HomePage() {
 
             <main className="bg-gray-600 text-gray-400 min-h-screen py-10 px-4">
                 <div className="container mx-auto max-w-4xl">
-                    <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
-                        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
-                            <Image
-                                src="/home-pic-optimized.webp"
-                                alt="Otizm danışmanlık görseli"
-                                width={500}
-                                height={500}
-                                className="object-cover rounded-lg shadow-md"
-                                priority
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
-                            <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
-                            <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-                                Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek
-                                sağlar. Erken tanı, sosyal beceri geliştirme, iletişim desteği ve günlük yaşam
-                                becerilerinin kazandırılması gibi birçok alanda uzman desteği sunar. Online Otizm
-                                Danışma, her adımda yanınızda!
-                            </p>
-                        </div>
-                    </div>
+                <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
+    <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
+        <Image
+            src="/home-pic-optimized.webp"
+            alt="Otizm danışmanlık görseli"
+            width={500}
+            height={500}
+            className="object-cover rounded-lg shadow-md"
+            priority
+        />
+    </div>
+    <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
+        <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
+        <p className="text-lg text-gray-300 mt-4 leading-relaxed">
+            Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek
+            sağlar. Erken tanı, sosyal beceri geliştirme, iletişim desteği ve günlük yaşam
+            becerilerinin kazandırılması gibi birçok alanda uzman desteği sunar. Online Otizm
+            Danışma, her adımda yanınızda!
+        </p>
+
+        {/* Otizm Testi Butonu */}
+        <div className="mt-6">
+            <Link href="/otizm_test">
+                <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-all">
+                    🧩 Otizm Testini Uygula
+                </button>
+            </Link>
+        </div>
+    </div>
+</div>
 
                     <section className="mb-10">
                         <h2 className="text-2xl font-semibold text-gray-100 mb-4">Hizmetlerimiz</h2>

@@ -5,7 +5,7 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s - Online Otizm Danışma',
-        default: 'Online Otizm Danışma - Otizm Rehberlik ve Destek'
+        default: 'Otizm Testi ve Rehberlik - Online Otizm Danışma'
     },
     icons: {
         icon: ['/favicon.ico?v=4'],
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         name: 'Online Otizm Danışma',
-        description: 'Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği.',
+        description: 'Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği. Bilimsel otizm testleri ile erken teşhis desteği.',
         url: 'https://onlineotizmdanisma.com',
         logo: 'https://onlineotizmdanisma.com/Logo.png',
         serviceType: 'Online Danışmanlık',
@@ -28,6 +28,30 @@ export default function RootLayout({ children }) {
             '@type': 'ContactPoint',
             telephone: '+905411808198',
             contactType: 'Müşteri Hizmetleri'
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Otizm Danışmanlık ve Test Hizmetleri",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Otizm Testi",
+                        "description": "Otizm spektrum bozukluğu belirtilerini tespit etmek için bilimsel M-CHAT-R/F otizm testi uygulayın.",
+                        "url": "https://onlineotizmdanisma.com/otizm-testi"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Otizm Danışmanlık",
+                        "description": "Otizmli çocuklar için bireyselleştirilmiş danışmanlık ve aile rehberliği.",
+                        "url": "https://onlineotizmdanisma.com/otizm-danismanlik"
+                    }
+                }
+            ]
         }
     };
 
@@ -38,35 +62,36 @@ export default function RootLayout({ children }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
                 <meta
                     name="description"
-                    content="Online Otizm Danışma: Otizm belirtileri, erken tanı, evde eğitim ve rehabilitasyon süreçlerinde uzman rehberlik. Aileler için özel çözümler!"
+                    content="Bilimsel M-CHAT-R/F otizm testi ile çocuğunuzun otizm riski olup olmadığını öğrenin. Ücretsiz online otizm testi ile erken teşhis imkanı."
                 />
                 <meta
                     name="keywords"
-                    content="otizm belirtileri, erken tanı, otizm eğitimi, özel eğitim merkezi, otizmli çocuklarla iletişim, evde otizm desteği, otizm danışmanlık"
+                    content="otizm testi, otizm test, otizm belirtileri, otizm testi online, çocuk otizm testi, otizm testi nasıl yapılır, otizm danışmanlık, otizm spektrum bozukluğu"
                 />
                 <meta name="author" content="Online Otizm Danışma" />
                 <meta name="publisher" content="Online Otizm Danışma" />
                 <meta name="google-site-verification" content="O56gcdRhHe0H3HNWbT24NSxcKbei7w1I03WAY_3l1PY" />
 
-                <meta property="og:title" content="Online Otizm Danışma - Otizm Rehberlik ve Destek" />
-                <meta
-                    property="og:description"
-                    content="Otizm spektrumundaki çocuklar için bireyselleştirilmiş eğitim çözümleri ve aile rehberliği."
-                />
-                <meta property="og:image" content="https://onlineotizmdanisma.com/og-image.webp" />
-                <meta property="og:url" content="https://onlineotizmdanisma.com" />
+                {/* Open Graph Meta Tags for Social Media */}
+                <meta property="og:title" content="Otizm Testi - Çocuğunuzun Otizm Riskini Öğrenin" />
+                <meta property="og:description" content="Bilimsel M-CHAT-R/F otizm testi ile çocuğunuzun otizm spektrum bozukluğu riski olup olmadığını hemen öğrenin." />
+                <meta property="og:image" content="https://onlineotizmdanisma.com/otizm-test-og-image.jpg" />
+                <meta property="og:url" content="https://onlineotizmdanisma.com/otizm-testi" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="tr_TR" />
 
-                <link rel="canonical" href="https://onlineotizmdanisma.com" />
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://onlineotizmdanisma.com/otizm-testi" />
                 <link rel="icon" href="https://onlineotizmdanisma.com/favicon.ico" />
                 <link rel="apple-touch-icon" href="https://onlineotizmdanisma.com/apple-touch-icon.png" />
                 <link rel="manifest" href="/site.webmanifest" />
 
+                {/* Google Fonts */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
+                {/* Schema.org Yapılandırılmış Veriler */}
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
             </head>
             <body>

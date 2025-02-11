@@ -39,4 +39,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+     <!-- Otizm test Sayfası -->
+        <url>
+        <loc>https://onlineotizmdanisma.com/otizm-test</loc>
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.8</priority>
+    </url>
 </urlset>
