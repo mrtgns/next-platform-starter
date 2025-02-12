@@ -5,7 +5,7 @@ import { Header } from '../components/header';
 export const metadata = {
     title: {
         template: '%s - Online Otizm Danışma',
-        default: 'Otizm Testi ve Rehberlik - Online Otizm Danışma'
+        default: 'Online Otizm Danışma'
     },
     icons: {
         icon: ['/favicon.ico?v=4'],
