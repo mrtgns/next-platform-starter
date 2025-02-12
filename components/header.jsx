@@ -40,11 +40,11 @@ export function Header() {
               Blog
             </span>
           </Link>
-          <Link href="/otizm_test">
+          {/* <Link href="/otizm_test">
             <span className="text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
              Çocuğumu Değerlendir
             </span>
-          </Link>
+          </Link> */}
           
           <Link href="/contact">
             <span className="text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
@@ -93,11 +93,11 @@ export function Header() {
               Blog
             </span>
           </Link>
-          <Link href="/otizm_test">
+          {/* <Link href="/otizm_test">
             <span className="block text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
              Çocuğumu Değerlendir
             </span>
-          </Link>
+          </Link> */}
           <Link href="/contact">
             <span className="block text-gray-300 hover:text-blue-400 font-semibold text-lg transition-colors duration-200 ease-in-out cursor-pointer">
               İletişim
