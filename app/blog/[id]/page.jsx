@@ -12,6 +12,7 @@ export default function BlogDetail() {
 
   useEffect(() => {
     const fetchBlog = async () => {
+      
       try {
         const docRef = doc(db, "bloglar", id); // Firestore'dan veriyi çek
         const docSnap = await getDoc(docRef);
