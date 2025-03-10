@@ -1,12 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: "standalone",
   experimental: {
-    appDir: true
+      appDir: true
   },
-  trailingSlash: true, // 🔥 404 hatasını önleyebilir
+  webpack: (config) => {
+      config.resolve.alias['@'] = __dirname;
+      return config;
+  }
 };
 
 module.exports = nextConfig;

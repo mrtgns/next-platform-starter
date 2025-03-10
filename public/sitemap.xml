@@ -45,4 +45,52 @@
         <lastmod>2025-02-09</lastmod>
         <priority>0.8</priority>
     </url>
+
+    <!-- Bireysel Eğitim Danışmanlığı Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/bireysel-egitim-danismanligi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sosyal Becerilerin Geliştirilmesi Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/sosyal-becerilerin-gelistirilmesi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Davranış Yönetimi Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/davranis-yonetimi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Motor Becerilerin Geliştirilmesi Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/motor-becerilerin-gelistirilmesi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- İletişim Becerilerinin Desteklenmesi Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/iletisim-becerilerinin-desteklenmesi</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Günlük Yaşam Becerileri Sayfası -->
+    <url>
+        <loc>https://onlineotizmdanisma.com/services/gunluk-yasam-becerileri</loc>
+        <lastmod>2025-03-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

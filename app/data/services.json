@@ -1,0 +1,238 @@
+{
+    "bireysel-egitim-danismanligi": {
+        "title": "Bireysel Eğitim Danışmanlığı",
+        "icon": "🎓",
+        "description": [
+            {
+                "heading": "1. Çocuğun İhtiyaçlarını Belirleme ve Kapsamlı Değerlendirme",
+                "content": [
+                    "Çocuğun gelişim seviyesini, güçlü ve zayıf yönlerini belirlemek için kapsamlı bir değerlendirme yapılır.",
+                    "Değerlendirilen alanlar: Dil ve İletişim, Sosyal Beceriler, Motor Beceriler, Günlük Yaşam Becerileri, Duyusal Hassasiyetler ve Problem Davranışlar.",
+                    "Değerlendirme sonrası çocuğun gelişimine uygun olarak aileye evde yapabilecekleri etkinlikler ve aktiviteler sunulur."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş Eğitim Planı  Hazırlama",
+                "content": [
+                    "Çocuğun ihtiyaçlarına uygun bireyselleştirilmiş eğitim programı hazırlanır.",
+                    "Kısa ve uzun vadeli hedefler belirlenir.",
+                    "Eğitim süresi, sıklığı ve içeriği kişiselleştirilir.",
+                    "BEP kapsamında, aileye çocuğun gelişimine uygun ev aktiviteleri önerilir. Bu aktiviteler çocuğun dil, motor ve sosyal becerilerini destekler."
+                ]
+            },
+            {
+                "heading": "3. Aile Eğitim ve Rehberliği",
+                "content": [
+                    "Aileye, çocuğa nasıl yaklaşmaları gerektiği konusunda rehberlik edilir.",
+                    "Olumsuz davranışlara nasıl tepki verilmesi gerektiği, dil gelişimini destekleyen oyunlar ve iletişim çalışmaları önerilir.",
+                    "Aile, evde uygulanabilecek etkinlikler hakkında bilgilendirilir."
+                ]
+            },
+            {
+                "heading": "4. Çocuğun Gelişimini Takip Etme ve Geri Bildirim Sağlama",
+                "content": [
+                    "Çocuğun ilerlemesi düzenli olarak takip edilir.",
+                    "Aileye çocuğun gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Gelişim raporuna ek olarak, aileye evde yapabilecekleri ek aktiviteler ve çalışmaları içeren bir liste sunulur."
+                ]
+            }
+            
+        ]
+    },
+    "sosyal-becerilerin-gelistirilmesi": {
+        "title": "Sosyal Becerilerin Geliştirilmesi",
+        "icon": "🤝",
+        "description": [
+            {
+                "heading": "1. Çocuğun Sosyal İhtiyaçlarını Belirleme ve Kapsamlı Değerlendirme",
+                "content": [
+                    "Çocuğun sosyal ortamlarda nasıl davrandığı, akranlarıyla nasıl iletişim kurduğu detaylı bir şekilde değerlendirilir.",
+                    "Değerlendirme sırasında gözlemlenen alanlar: Göz teması, sıra alma, duygu tanıma, ortak dikkat ve oyun kurma becerileri.",
+                    "Değerlendirme sonrası çocuğun sosyal ihtiyaçlarına uygun olarak aileye evde uygulayabileceği etkinlikler önerilir."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş Sosyal Beceri Programı  Hazırlama",
+                "content": [
+                    "Çocuğun sosyal beceri eksikliklerine uygun bireyselleştirilmiş bir program hazırlanır.",
+                    "Hedefler kısa ve uzun vadeli olarak belirlenir.",
+                    "Program çocuğun akranlarıyla etkileşimini artırmak ve sosyal ortamlara uyumunu sağlamak amacıyla kişiselleştirilir.",
+                    "Program kapsamında evde yapılabilecek sosyal beceri çalışmaları önerilir."
+                ]
+            },
+            {
+                "heading": "3. Aile Rehberliği ve Destek Programı",
+                "content": [
+                    "Aileye, çocuğun sosyal gelişimine nasıl katkıda bulunabilecekleri konusunda rehberlik sağlanır.",
+                    "Aileye çocuğun duygularını tanıması, sıra alması ve göz teması kurması için evde uygulayabilecekleri etkinlikler sunulur.",
+                    "Aileye önerilen etkinlikler: Duygu kartları ile çalışma, göz teması kurma oyunları, sıra alma ve ortak dikkat çalışmaları."
+                ]
+            },
+            {
+                "heading": "4. Sosyal Becerilerin Gelişiminin Takibi ve Geri Bildirim",
+                "content": [
+                    "Çocuğun sosyal beceri gelişimi düzenli olarak takip edilir.",
+                    "Aileye çocuğun sosyal gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Aileye evde uygulanacak yeni etkinlikler ve sosyal beceri çalışmaları hakkında öneriler sunulur."
+                ]
+            }
+        ]
+    },
+    "iletisim-becerilerinin-desteklenmesi": {
+        "title": "İletişim Becerilerinin Desteklenmesi",
+        "icon": "🗣️",
+        "description": [
+            {
+                "heading": "1. Çocuğun İletişim İhtiyaçlarını Belirleme ve Değerlendirme",
+                "content": [
+                    "Çocuğun sözel ve sözel olmayan iletişim becerileri değerlendirilir.",
+                    "Değerlendirme sırasında gözlemlenen alanlar: Kelime hazinesi, jest ve mimikler, iki yönlü iletişim ve konuşma başlatma becerileri.",
+                    "Değerlendirme sonrası çocuğun iletişim ihtiyaçlarına uygun olarak aileye evde yapabilecekleri etkinlikler önerilir."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş İletişim Programı  Hazırlama",
+                "content": [
+                    "Çocuğun iletişim eksikliklerine uygun bireyselleştirilmiş bir program hazırlanır.",
+                    "Hedefler kısa ve uzun vadeli olarak belirlenir.",
+                    "Program çocuğun konuşma, dinleme ve tepki verme becerilerini geliştirmeye odaklanır.",
+                    "Evde yapılabilecek konuşma terapileri ve iletişim oyunları önerilir."
+                ]
+            },
+            {
+                "heading": "3. Aile Rehberliği ve İletişim Destek Programı",
+                "content": [
+                    "Aileye, çocuğun iletişim becerilerini nasıl destekleyebilecekleri konusunda rehberlik sağlanır.",
+                    "Aileye önerilen etkinlikler: Resim kartları ile kelime öğrenme, jest ve mimik çalışmaları, hikaye tamamlama ve duygu ifadeleri çalışmaları."
+                ]
+            },
+            {
+                "heading": "4. İletişim Becerilerinin Takibi ve Geri Bildirim",
+                "content": [
+                    "Çocuğun iletişim becerileri düzenli olarak takip edilir.",
+                    "Aileye çocuğun iletişim gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Aileye evde uygulanacak yeni etkinlikler ve konuşma çalışmaları hakkında öneriler sunulur."
+                ]
+            }
+        ]
+    },
+    "motor-becerilerin-gelistirilmesi": {
+        "title": "Motor Becerilerin Geliştirilmesi",
+        "icon": "🏃‍♂️",
+        "description": [
+            {
+                "heading": "1. Çocuğun Motor Becerilerini Belirleme ve Değerlendirme",
+                "content": [
+                    "Çocuğun ince ve kaba motor becerileri detaylı olarak değerlendirilir.",
+                    "Değerlendirme sırasında gözlemlenen alanlar: El-göz koordinasyonu, denge, kas gücü ve motor planlama becerileri.",
+                    "Değerlendirme sonrası çocuğun motor ihtiyaçlarına uygun olarak aileye evde yapabilecekleri etkinlikler önerilir."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş Motor Becerileri Programı Hazırlama",
+                "content": [
+                    "Çocuğun motor eksikliklerine uygun bireyselleştirilmiş bir program hazırlanır.",
+                    "Program içeriği ince ve kaba motor becerilerini destekleyen aktiviteleri kapsar.",
+                    "Evde yapılabilecek el-göz koordinasyonu ve denge çalışmaları önerilir."
+                ]
+            },
+            {
+                "heading": "3. Aile Rehberliği ve Destek Programı",
+                "content": [
+                    "Aileye çocuğun motor becerilerini nasıl geliştirebilecekleri konusunda rehberlik sağlanır.",
+                    "Aileye önerilen etkinlikler: Top tutma çalışmaları, blok yapımı, makas kullanma ve ip atlama çalışmaları."
+                ]
+            },
+            {
+                "heading": "4. Motor Becerilerinin Takibi ve Geri Bildirim",
+                "content": [
+                    "Çocuğun motor becerileri düzenli olarak takip edilir.",
+                    "Aileye çocuğun motor gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Aileye evde uygulanacak yeni etkinlikler ve motor beceri çalışmaları hakkında öneriler sunulur."
+                ]
+            }
+        ]
+    },
+    "gunluk-yasam-becerileri": {
+        "title": "Günlük Yaşam Becerileri",
+        "icon": "🏡",
+        "description": [
+            {
+                "heading": "1. Çocuğun Günlük Yaşam Becerilerini Belirleme ve Değerlendirme",
+                "content": [
+                    "Çocuğun temel günlük yaşam becerileri detaylı olarak değerlendirilir.",
+                    "Değerlendirme sırasında gözlemlenen alanlar: Yeme, içme, giyinme, tuvalet alışkanlıkları ve temizlik becerileri.",
+                    "Değerlendirme sonrası çocuğun günlük yaşam ihtiyaçlarına uygun olarak aileye evde yapabilecekleri etkinlikler önerilir."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş Günlük Yaşam Becerileri Programı Hazırlama",
+                "content": [
+                    "Çocuğun bağımsızlık kazanması için bireyselleştirilmiş bir program hazırlanır.",
+                    "Program içeriği kişisel bakım ve ev içi görevler ile ilgili etkinlikleri kapsar.",
+                    "Evde yapılabilecek kişisel bakım ve temizlik çalışmaları önerilir."
+                ]
+            },
+            {
+                "heading": "3. Aile Rehberliği ve Destek Programı",
+                "content": [
+                    "Aileye çocuğun günlük yaşam becerilerini nasıl geliştirebilecekleri konusunda rehberlik sağlanır.",
+                    "Aileye önerilen etkinlikler: Yatak yapma, sofra kurma, giyinme, ayakkabı bağlama çalışmaları."
+                ]
+            },
+            {
+                "heading": "4. Günlük Yaşam Becerilerinin Takibi ve Geri Bildirim",
+                "content": [
+                    "Çocuğun günlük yaşam becerileri düzenli olarak takip edilir.",
+                    "Aileye çocuğun günlük yaşam gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Aileye evde uygulanacak yeni etkinlikler ve günlük yaşam becerileri çalışmaları hakkında öneriler sunulur."
+                ]
+            }
+        ]
+    },
+    "davranis-yonetimi": {
+        "title": "Davranış Yönetimi",
+        "icon": "🧠",
+        "description": [
+            {
+                "heading": "1. Çocuğun Davranış Problemlerini Belirleme ve Değerlendirme",
+                "content": [
+                    "Çocuğun olumsuz davranışları detaylı olarak analiz edilir.",
+                    "Değerlendirme sırasında gözlemlenen alanlar: Saldırganlık, öfke kontrolü, inatçılık ve duygusal tepkiler.",
+                    "Değerlendirme sonrası çocuğun davranış problemlerine uygun olarak aileye evde uygulayabilecekleri stratejiler ve etkinlikler sunulur."
+                ]
+            },
+            {
+                "heading": "2. Bireyselleştirilmiş Davranış Yönetimi Planı Hazırlama",
+                "content": [
+                    "Çocuğun olumsuz davranışlarını kontrol altına almak için bireyselleştirilmiş bir davranış yönetimi programı hazırlanır.",
+                    "Hedefler kısa ve uzun vadeli olarak belirlenir.",
+                    "Programda pozitif pekiştirme, olumsuz davranışları görmezden gelme ve alternatif davranış kazandırma tekniklerine yer verilir.",
+                    "Evde uygulanabilecek ödül sistemleri ve davranış takip çizelgeleri önerilir."
+                ]
+            },
+            {
+                "heading": "3. Aile Rehberliği ve Davranış Yönetimi Destek Programı",
+                "content": [
+                    "Aileye çocuğun olumsuz davranışlarını nasıl yönetebilecekleri konusunda rehberlik sağlanır.",
+                    "Aileye önerilen etkinlikler: Duyguları tanıma kartları, öfke kontrolü oyunları, sabır ve sıra alma çalışmaları.",
+                    "Aileye pozitif pekiştirme ve olumsuz davranışları azaltma konusunda stratejiler sağlanır."
+                ]
+            },
+            {
+                "heading": "4. Davranış Gelişiminin Takibi ve Geri Bildirim",
+                "content": [
+                    "Çocuğun davranış gelişimi düzenli olarak takip edilir.",
+                    "Aileye çocuğun davranış gelişimi hakkında rapor sunulur.",
+                    "Başarıya göre yeni hedefler belirlenir.",
+                    "Aileye evde uygulanacak yeni etkinlikler ve davranış yönetimi çalışmaları hakkında öneriler sunulur."
+                ]
+            }
+        ]
+    }
+}
