@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/blog/:id",
-      "destination": "/blog/[id]/page.js"
+      "destination": "/blog/[id]"
     }
   ],
   "redirects": [
@@ -10,6 +10,17 @@
       "source": "/old-route",
       "destination": "/new-route",
       "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
