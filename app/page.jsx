@@ -112,10 +112,11 @@ export default function HomePage() {
         <Image
             src="/home-pic-optimized.webp"
             alt="Otizm danışmanlık görseli"
-            width={500}
-            height={500}
+            width={400}
+            height={400}
+            quality={60}
             className="object-cover rounded-lg shadow-md"
-            priority
+            loading="lazy"
         />
     </div>
     <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
