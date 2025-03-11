@@ -3,88 +3,47 @@
 export default function AboutUs() {
   const aboutSections = [
     {
+      title: "Hakkımızda",
+      description:
+        "Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek sağlamak amacıyla kurulmuş bir platformdur. Amacımız, otizmli çocukların gelişimini desteklemek için ailelere bilimsel temellere dayalı eğitim programları, sosyal beceri geliştirme yöntemleri ve davranış yönetimi stratejileri sunmaktır. Aileler için özel olarak hazırladığımız platformda, çocukların gelişimini destekleyecek evde uygulanabilir etkinlikler, eğitim programları ve oyun tabanlı aktiviteler sunuyoruz.",
+      icon: "🌟",
+    },
+    {
       title: "Misyonumuz",
       description:
-        "Her bireyin eşit eğitim hakkına sahip olduğu bir dünya için çalışıyoruz. Otizmli bireylerin ihtiyaçlarına uygun çözümler sunmayı amaçlıyoruz.",
-      icon: "🌟",
+        "Otizm spektrumundaki çocukların ve ailelerinin yaşam kalitesini artırmak için bilimsel temellere dayalı, kolay erişilebilir ve etkili destek sağlamak. Ailelerin çocuklarına evde etkili bir şekilde destek olmalarına yardımcı olmak ve çocukların bağımsız yaşam becerilerini kazanmalarını sağlamak.",
+      icon: "🎯",
     },
     {
       title: "Vizyonumuz",
       description:
-        "Otizmli bireylerin bağımsız, üretken ve mutlu bir hayat sürmelerini destekleyen lider bir platform olmak.",
+        "Otizmli çocukların ve ailelerinin ihtiyaçlarına yönelik kapsamlı bir kaynak merkezi haline gelmek. Her çocuğun bireysel ihtiyaçlarına göre özel olarak hazırlanmış eğitim programları ve aktiviteler sunarak, ailelerin güvenilir bir rehber olarak başvurabileceği bir platform olmak.",
       icon: "🔍",
     },
     {
       title: "Değerlerimiz",
       description:
-        "Empati, yenilikçilik ve sürdürülebilirlik temel değerlerimizdir. Aileler ve uzmanlarla iş birliği içinde çalışırız.",
+        "Bilimsellik, erişilebilirlik, empati, bağımsızlık, güven ve sürekli gelişim temel değerlerimizdir. Ailelerin ve çocukların ihtiyaçlarını anlayarak güvenilir ve bilimsel bir destek sunmayı hedefliyoruz.",
       icon: "💡",
-    },
-    {
-      title: "Erişim Kolaylığı ve Esneklik",
-      description:
-        "Coğrafi konumdan bağımsız olarak uzman desteğine her yerden ulaşabilirsiniz. Esnek randevu saatleri ile zamandan tasarruf edin.",
-      icon: "🌍",
-    },
-    {
-      title: "Zamandan ve Maliyetten Tasarruf",
-      description:
-        "Ulaşım ve diğer ek masrafları ortadan kaldırarak daha ekonomik bir danışmanlık hizmeti sunuyoruz.",
-      icon: "💰",
-    },
-    {
-      title: "Kişiselleştirilmiş Destek",
-      description:
-        "Her çocuğun ihtiyacına özel olarak hazırlanan bireysel eğitim planlarıyla gelişim süreçlerini destekliyoruz.",
-      icon: "🎯",
-    },
-    {
-      title: "Ev Ortamında Rahatlık ve Güven",
-      description:
-        "Çocuklar, kendi ev ortamlarında daha rahat hisseder ve eğitim süreçlerine daha kolay adapte olabilirler.",
-      icon: "🏡",
-    },
-    {
-      title: "Ailelerin Sürece Dahil Olması",
-      description:
-        "Ebeveynlere doğrudan rehberlik ederek çocuklarına nasıl destek olabileceklerini öğretiyoruz.",
-      icon: "👨‍👩‍👧",
-    },
-    {
-      title: "Sürekli ve Güncel Bilgiye Erişim",
-      description:
-        "Eğitim materyalleri ve kaynaklara kolayca ulaşarak en güncel eğitim yöntemlerini öğrenebilirsiniz.",
-      icon: "📚",
-    },
-    {
-      title: "Sosyal ve Duygusal Destek",
-      description:
-        "Aileler için bireysel danışmanlık ve topluluk desteği sunarak duygusal dayanıklılığı artırıyoruz.",
-      icon: "❤️",
-    },
+    }
   ];
 
   return (
-    <div className="bg-gray-600 text-gray-300 min-h-screen py-12">
+    <div className="bg-gray-600 text-gray-100 min-h-screen py-12">
       <div className="container mx-auto px-6">
-        <h1 className="text-center text-4xl font-semibold text-gray-100 mb-10">
+        <h1 className="text-center text-4xl font-semibold text-white mb-10">
           Hakkımızda
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {aboutSections.map((section, index) => (
-            <div
-              key={index}
-              className="bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:bg-gray-600 transition duration-200"
-            >
-              <div className="text-5xl mb-4">{section.icon}</div>
-              <h2 className="text-2xl font-bold text-gray-100 mb-2">
-                {section.title}
-              </h2>
-              <p className="text-gray-400">{section.description}</p>
-            </div>
-          ))}
-        </div>
+        {aboutSections.map((section, index) => (
+          <div key={index} className="mb-8">
+            <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
+              <span className="mr-2">{section.icon}</span>
+              {section.title}
+            </h2>
+            <p className="text-gray-200">{section.description}</p>
+          </div>
+        ))}
 
         <div className="mt-12 text-center">
           <a
