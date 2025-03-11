@@ -57,6 +57,7 @@ export function Header() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-gray-300 focus:outline-none"
+          aria-label="Menüyü aç"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

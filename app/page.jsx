@@ -130,7 +130,7 @@ export default function HomePage() {
         {/* Otizm Testi Butonu */}
         <div className="mt-6">
             <Link href="/otizm_test">
-                <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-all">
+                <button className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-md transition-all">
                     🧩 Çocuğumu Değerlendir
                 </button>
             </Link>
