@@ -5,27 +5,35 @@ export default function AboutUs() {
     {
       title: "Hakkımızda",
       description:
-        "Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek sağlamak amacıyla kurulmuş bir platformdur. Amacımız, otizmli çocukların gelişimini desteklemek için ailelere bilimsel temellere dayalı eğitim programları, sosyal beceri geliştirme yöntemleri ve davranış yönetimi stratejileri sunmaktır. Aileler için özel olarak hazırladığımız platformda, çocukların gelişimini destekleyecek evde uygulanabilir etkinlikler, eğitim programları ve oyun tabanlı aktiviteler sunuyoruz.",
+        "Online Otizm Danışma, otizmli çocukların ailelerine rehberlik ve destek olmak için kurulmuş bir platformdur. Amacımız, bilimsel temellere dayalı eğitim programları, sosyal beceri geliştirme yöntemleri ve davranış yönetimi stratejileri ile ailelere güvenilir bir rehber sunmaktır. Aileler için özel olarak hazırladığımız platformda, evde kolayca uygulanabilecek etkinlikler, eğitim programları ve oyun tabanlı aktiviteler sunuyoruz.",
       icon: "🌟",
     },
     {
       title: "Misyonumuz",
       description:
-        "Otizm spektrumundaki çocukların ve ailelerinin yaşam kalitesini artırmak için bilimsel temellere dayalı, kolay erişilebilir ve etkili destek sağlamak. Ailelerin çocuklarına evde etkili bir şekilde destek olmalarına yardımcı olmak ve çocukların bağımsız yaşam becerilerini kazanmalarını sağlamak.",
+        "Otizmli çocukların ve ailelerinin yaşam kalitesini artırmak için bilimsel, erişilebilir ve etkili destek sunmak. Ailelerin çocuklarına evde daha etkili destek olmalarını sağlamak ve bağımsız yaşam becerilerini geliştirmelerine yardımcı olmak.",
       icon: "🎯",
     },
     {
       title: "Vizyonumuz",
       description:
-        "Otizmli çocukların ve ailelerinin ihtiyaçlarına yönelik kapsamlı bir kaynak merkezi haline gelmek. Her çocuğun bireysel ihtiyaçlarına göre özel olarak hazırlanmış eğitim programları ve aktiviteler sunarak, ailelerin güvenilir bir rehber olarak başvurabileceği bir platform olmak.",
+        "Otizmli çocuklar ve aileleri için güvenilir ve kapsamlı bir kaynak merkezi olmak. Her çocuğun bireysel ihtiyaçlarına göre özelleştirilmiş eğitim programları sunarak, ailelerin başvurabileceği güvenilir bir rehber haline gelmek.",
       icon: "🔍",
     },
     {
       title: "Değerlerimiz",
-      description:
-        "Bilimsellik, erişilebilirlik, empati, bağımsızlık, güven ve sürekli gelişim temel değerlerimizdir. Ailelerin ve çocukların ihtiyaçlarını anlayarak güvenilir ve bilimsel bir destek sunmayı hedefliyoruz.",
+      description: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li><strong>Bilimsellik:</strong> Bilimsel temellere dayalı içerikler sunuyoruz.</li>
+          <li><strong>Erişilebilirlik:</strong> Her aile, ihtiyaç duyduğu bilgiye kolayca ulaşabilmelidir.</li>
+          <li><strong>Empati:</strong> Ailelerin ve çocukların yaşadığı zorlukları anlıyoruz.</li>
+          <li><strong>Bağımsızlık:</strong> Çocukların günlük yaşamda bağımsız olmalarını destekliyoruz.</li>
+          <li><strong>Güven:</strong> Ailelerin güvenle başvurabileceği bir platform sunuyoruz.</li>
+          <li><strong>Sürekli Gelişim:</strong> İçeriklerimizi sürekli güncelleyerek en iyi desteği sağlıyoruz.</li>
+        </ul>
+      ),
       icon: "💡",
-    }
+    },
   ];
 
   return (
@@ -36,19 +44,19 @@ export default function AboutUs() {
         </h1>
 
         {aboutSections.map((section, index) => (
-          <div key={index} className="mb-8">
+          <div key={index} className="mb-8 border-b border-gray-700 pb-4">
             <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
               <span className="mr-2">{section.icon}</span>
               {section.title}
             </h2>
-            <p className="text-gray-200">{section.description}</p>
+            <div className="text-gray-300">{section.description}</div>
           </div>
         ))}
 
         <div className="mt-12 text-center">
           <a
             href="/contact"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-200 inline-block"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-200 inline-block"
           >
             Daha Fazla Bilgi Al
           </a>
