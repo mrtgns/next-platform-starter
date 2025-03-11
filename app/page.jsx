@@ -43,40 +43,34 @@ export default function HomePage() {
 
     const services = [
         {
-            title: 'Eğitim ve Terapi Rehberliği',
-            description:
-                'Otizmli çocuklar için uygun eğitim ve terapi programları hakkında bilgi ve rehberlik sağlamak.'
+            title: 'Bireysel Eğitim Danışmanlığı',
+            description: 'Çocuğunuzun bireysel ihtiyaçlarına uygun özel eğitim programları oluşturuyoruz.',
+            link: '/services/bireysel-egitim-danismanligi'
         },
         {
             title: 'Sosyal Becerilerin Geliştirilmesi',
-            description: 'Çocukların sosyal becerilerini geliştirmek için etkinlik önerileri ve yöntemler sunmak.'
-        },
-        {
-            title: 'Aile Desteği ve Eğitimi',
-            description:
-                'Aile üyelerinin otizm konusunda bilinçlenmesi ve çocuğa nasıl destek olabilecekleri konusunda eğitimler.'
+            description: 'Çocukların sosyal becerilerini geliştirmek için etkinlik önerileri ve yöntemler sunmak.',
+            link: '/services/sosyal-becerilerin-gelistirilmesi'
         },
         {
             title: 'Davranış Yönetimi',
-            description: 'Davranış problemleri ile başa çıkma stratejileri ve pozitif davranış yönetimi teknikleri.'
+            description: 'Davranış problemleri ile başa çıkma stratejileri ve pozitif davranış yönetimi teknikleri.',
+            link: '/services/davranis-yonetimi'
         },
         {
             title: 'Motor Becerilerin Geliştirilmesi',
-            description:
-                'Ergoterapist eşliğinde evde çocukların motor becerilerini geliştirmek için egzersiz teknikleri.'
+            description: 'Evde çocukların motor becerilerini geliştirmek için egzersiz teknikleri.',
+            link: '/services/motor-becerilerin-gelistirilmesi'
         },
         {
             title: 'İletişim Becerilerinin Desteklenmesi',
-            description: 'Çocukların iletişim becerilerini geliştirmek için öneriler ve araçlar.'
+            description: 'Çocukların iletişim becerilerini geliştirmek için öneriler ve araçlar.',
+            link: '/services/iletisim-becerilerinin-desteklenmesi'
         },
-        {
-            title: 'Erken Müdahale Programları',
-            description: 'Erken tanı ve müdahale programları hakkında bilgi ve yönlendirme.'
-        },
-        { title: 'Ulaşılabilir Kaynak Bulma', description: 'Aileler için çevrimiçi destek ve kaynak bilgileri.' },
         {
             title: 'Günlük Yaşam Becerileri',
-            description: 'Günlük yaşamda bağımsızlık kazanmak için pratik beceriler ve ipuçları.'
+            description: 'Günlük yaşamda bağımsızlık kazanmak için pratik beceriler ve ipuçları.',
+            link: '/services/gunluk-yasam-becerileri'
         }
     ];
 
@@ -143,14 +137,15 @@ export default function HomePage() {
                         <h2 className="text-2xl font-semibold text-gray-100 mb-4">Hizmetlerimiz</h2>
                         <div className="space-y-6">
                             {services.map((service, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-gray-700 p-6 rounded-lg shadow-md hover:bg-gray-600 transition duration-200"
-                                >
-                                    <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.title}</h3>
-                                    <p className="text-gray-300">{service.description}</p>
-                                </div>
-                            ))}
+                            <Link key={index} href={service.link} passHref legacyBehavior>
+                                <a className="no-underline">
+                                    <div className="bg-gray-700 p-6 rounded cursor-pointer border-none transition duration-200 hover:bg-gray-600 hover:text-white">
+                                        <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.title}</h3>
+                                        <p className="text-gray-300">{service.description}</p>
+                                    </div>
+                                </a>
+                            </Link>
+                 ))}
                         </div>
                     </section>
                 </div>
