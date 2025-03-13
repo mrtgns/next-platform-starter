@@ -1,11 +1,12 @@
 "use client";
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export const dynamic = "force-dynamic"; // Sayfanın dinamik olmasını sağlar
 
-export default function ResultPage() {
+function ResultContent() {
     const searchParams = useSearchParams();
     const result = searchParams?.get("result") || "Bilinmiyor";
     const message = searchParams?.get("message") ? decodeURIComponent(searchParams.get("message")) : "";
@@ -24,5 +25,13 @@ export default function ResultPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function ResultPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ResultContent />
+        </Suspense>
     );
 }
