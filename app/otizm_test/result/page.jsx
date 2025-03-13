@@ -1,9 +1,12 @@
 "use client";
 
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Link from 'next/link';
 
-export default function ResultPage() {
+export const dynamic = "force-dynamic"; // Sayfanın dinamik olmasını sağlar
+
+function ResultContent() {
     const searchParams = useSearchParams();
     const result = searchParams.get("result");
     const message = searchParams.get("message");
@@ -17,7 +20,7 @@ export default function ResultPage() {
                 </p>
                 {message && (
                     <p className="mt-4 text-gray-600">
-                        {decodeURIComponent(message)}
+                        {message ? decodeURIComponent(message) : ""}
                     </p>
                 )}
                 <div className="mt-6 text-center flex justify-center gap-4">
@@ -30,5 +33,13 @@ export default function ResultPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function ResultPage() {
+    return (
+        <Suspense fallback={<div>Sonuçlar yükleniyor...</div>}>
+            <ResultContent />
+        </Suspense>
     );
 }
