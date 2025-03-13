@@ -1,20 +1,12 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function ResultPage() {
-    return (
-        <Suspense fallback={<div>Sonuçlar yükleniyor...</div>}>
-            <ResultContent />
-        </Suspense>
-    );
-}
-
-function ResultContent() {
     const searchParams = useSearchParams();
     const result = searchParams.get("result");
+    const message = searchParams.get("message");
 
     return (
         <div className="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -23,7 +15,11 @@ function ResultContent() {
                 <p className="text-lg text-gray-700">
                     Test Sonucu: <strong>{result || "Bilinmiyor"}</strong>
                 </p>
-
+                {message && (
+                    <p className="mt-4 text-gray-600">
+                        {decodeURIComponent(message)}
+                    </p>
+                )}
                 <div className="mt-6 text-center flex justify-center gap-4">
                     <Link href="/services" className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
                         Hizmetlerimiz

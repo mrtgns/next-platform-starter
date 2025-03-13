@@ -122,9 +122,7 @@ export default function OtizmTesti() {
             });
 
             router.push(
-                `/otizm_test/result?name=${encodeURIComponent(formData.name)}&risk=${encodeURIComponent(
-                    riskAnalizi.risk
-                )}&message=${encodeURIComponent(riskAnalizi.mesaj)}`
+                `/otizm_test/result?result=${encodeURIComponent(riskAnalizi.risk)}&message=${encodeURIComponent(riskAnalizi.mesaj)}`
             );
         } catch (error) {
             setError(`Veri kaydedilemedi: ${error.message}. Lütfen tekrar deneyin.`);
