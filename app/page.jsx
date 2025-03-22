@@ -7,38 +7,43 @@ import { useEffect } from 'react';
 
 export default function HomePage() {
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
-                window.chatbase = (...args) => {
-                    if (!window.chatbase.q) {
-                        window.chatbase.q = [];
-                    }
-                    window.chatbase.q.push(args);
-                };
-                window.chatbase = new Proxy(window.chatbase, {
-                    get(target, prop) {
-                        if (prop === 'q') {
-                            return target.q;
-                        }
-                        return (...args) => target(prop, ...args);
-                    }
-                });
-            }
-
-            const onLoad = () => {
-                const script = document.createElement('script');
-                script.src = 'https://www.chatbase.co/embed.min.js';
-                script.id = 'WAlB5bCRUkhz_HGkJ5QJc';
-                script.dataset.domain = 'www.chatbase.co';
-                document.body.appendChild(script);
+        if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
+            window.chatbase = (...args) => {
+                if (!window.chatbase.q) {
+                    window.chatbase.q = [];
+                }
+                window.chatbase.q.push(args);
             };
-
-            if (document.readyState === 'complete') {
-                onLoad();
-            } else {
-                window.addEventListener('load', onLoad);
-            }
+            window.chatbase = new Proxy(window.chatbase, {
+                get(target, prop) {
+                    if (prop === 'q') {
+                        return target.q;
+                    }
+                    return (...args) => target(prop, ...args);
+                }
+            });
         }
+
+        const onLoad = () => {
+            const script = document.createElement('script');
+            script.src = 'https://www.chatbase.co/embed.min.js';
+            script.id = 'WAlB5bCRUkhz_HGkJ5QJc';
+            script.dataset.domain = 'www.chatbase.co';
+            document.body.appendChild(script);
+        };
+
+        if (document.readyState === 'complete') {
+            onLoad();
+        } else {
+            window.addEventListener('load', onLoad);
+        }
+
+        const observer = new MutationObserver(() => {
+            document.body.removeAttribute('cz-shortcut-listen');
+        });
+        observer.observe(document.body, { attributes: true });
+
+        return () => observer.disconnect();
     }, []);
 
     const services = [
@@ -101,51 +106,53 @@ export default function HomePage() {
 
             <main className="bg-gray-600 text-gray-400 min-h-screen py-10 px-4">
                 <div className="container mx-auto max-w-4xl">
-                <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
-    <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
-        <Image
-            src="/home-pic-optimized.webp"
-            alt="Otizm danışmanlık görseli"
-            width={400}
-            height={400}
-            quality={60}
-            className="object-cover rounded-lg shadow-md"
-            loading="lazy"
-        />
-    </div>
-    <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
-        <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
-        <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-            Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek
-            sağlar. Erken tanı, sosyal beceri geliştirme, iletişim desteği ve günlük yaşam
-            becerilerinin kazandırılması gibi birçok alanda uzman desteği sunar. Online Otizm
-            Danışma, her adımda yanınızda!
-        </p>
+                    <div className="flex flex-wrap items-center justify-center mb-8 space-y-4 md:space-y-0">
+                        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pr-4">
+                            <Image
+                                src="/home-pic-optimized.webp"
+                                alt="Otizm danışmanlık görseli"
+                                width={400}
+                                height={400}
+                                quality={60}
+                                className="object-cover rounded-lg shadow-md"
+                                priority
+                            />
+                        </div>
+                        <div className="w-full md:w-1/2 text-center md:text-left md:pl-4">
+                            <h1 className="text-4xl font-bold text-gray-100">Online Otizm Danışma</h1>
+                            <p className="text-lg text-gray-300 mt-4 leading-relaxed">
+                                Online Otizm Danışma, otizm spektrumundaki çocukların ailelerine rehberlik ve destek
+                                sağlar. Erken tanı, sosyal beceri geliştirme, iletişim desteği ve günlük yaşam
+                                becerilerinin kazandırılması gibi birçok alanda uzman desteği sunar. Online Otizm
+                                Danışma, her adımda yanınızda!
+                            </p>
 
-        {/* Otizm Testi Butonu */}
-        <div className="mt-6">
-            <Link href="/otizm_test">
-                <button className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-md transition-all">
-                    🧩 Çocuğumu Değerlendir
-                </button>
-            </Link>
-        </div>
-    </div>
-</div>
+                            {/* Otizm Testi Butonu */}
+                            <div className="mt-6">
+                                <Link href="/otizm_test">
+                                    <button className="px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow-md transition-all">
+                                        🧩 Çocuğumu Değerlendir
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
 
                     <section className="mb-10">
                         <h2 className="text-2xl font-semibold text-gray-100 mb-4">Hizmetlerimiz</h2>
-                        <div className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {services.map((service, index) => (
-                            <Link key={index} href={service.link} passHref legacyBehavior>
-                                <a className="no-underline">
-                                    <div className="bg-gray-700 p-6 rounded cursor-pointer border-none transition duration-200 hover:bg-gray-600 hover:text-white">
-                                        <h3 className="text-xl font-semibold text-gray-100 mb-2">{service.title}</h3>
-                                        <p className="text-gray-300">{service.description}</p>
-                                    </div>
-                                </a>
-                            </Link>
-                 ))}
+                                <Link key={index} href={service.link} passHref legacyBehavior>
+                                    <a className="no-underline">
+                                        <div className="bg-gray-700 p-6 rounded cursor-pointer border-none transition duration-200 hover:bg-gray-600 hover:text-white">
+                                            <h3 className="text-xl font-semibold text-gray-100 mb-2">
+                                                {service.title}
+                                            </h3>
+                                            <p className="text-gray-300">{service.description}</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                            ))}
                         </div>
                     </section>
                 </div>
